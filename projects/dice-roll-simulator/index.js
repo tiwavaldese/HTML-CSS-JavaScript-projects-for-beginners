@@ -1,3 +1,4 @@
+
 const buttonEl = document.getElementById("roll-button");
 
 const diceEl = document.getElementById("dice");
@@ -51,3 +52,44 @@ buttonEl.addEventListener("click", () => {
     rollDice();
   }, 1000);
 });
+
+
+
+
+// // Get references to DOM elements
+// let dice = document.querySelector('#dice');
+// let rollBtn = document.querySelector('#roll-button')
+// let rollHis = document.querySelector('#roll-history')
+
+// //Function to generate random numbers between 1 and 6
+// function rollDice(){
+//   let num = Math.floor(Math.random() * 6) + 1;
+//   return num;
+// }
+// console.log(rollDice())
+// // // Add event listener to the button
+// rollBtn.addEventListener('click', function(){
+ 
+// //Roll the dice
+// let rollResult = rollDice()
+
+// //Update the dice display with rollResult
+// // string.fromCodePoint is the graphic representation of the dice face which convert the unicode
+// //unicode 9855 represent face 1
+// dice.textContent = String.fromCodePoint(9855 + rollResult);
+
+//   // Create a new list item to display the roll result
+// let newRollItem = document.createElement('li')
+// newRollItem.textContent = `Roll ${rollHis.childElementCount + 1}: ${dice.textContent}`
+
+// // Add the roll item to the roll history
+// rollHis.appendChild(newRollItem)
+
+// // Add roll animation class
+// dice.classList.add("roll-animation");
+//  // Remove roll animation class after 1 second and roll the dice again
+// setTimeout(() => {
+//   dice.classList.remove("roll-animation");
+//   rollDice();
+// }, 1000);
+// })

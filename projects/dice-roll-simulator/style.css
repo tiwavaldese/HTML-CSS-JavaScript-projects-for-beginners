@@ -11,9 +11,10 @@ h1 {
 
 .dice {
   font-size: 7rem;
-  margin: 5px;
+  margin: 5px ;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  color: red;
 }
 
 .roll-animation {
