@@ -2,10 +2,10 @@ const nextEl = document.getElementById("next");
 const prevEl = document.getElementById("prev");
 
 const progressEl = document.querySelector(".progress-bar-front");
-
+// select all the steps
 const stepsEl = document.querySelectorAll(".step");
-
-let currentChecked = 1;
+//Current step the user is on
+let currentChecked = 0;
 
 nextEl.addEventListener("click", () => {
   currentChecked++;
@@ -24,6 +24,8 @@ prevEl.addEventListener("click", () => {
 });
 
 function updateStepProgress() {
+  //if the index of the step is less than currentChecked 
+  //add a check and some labels to mark complete
   stepsEl.forEach((stepEl, idx) => {
     if (idx < currentChecked) {
       stepEl.classList.add("checked");
@@ -34,10 +36,14 @@ function updateStepProgress() {
           ? "Start"
           : idx === stepsEl.length - 1
           ? "Final"
-          : "Step " + idx
+          : "Step " + idx // step 1, step 2, step 3
       }</small>
       `;
-    } else {
+     
+    } 
+    //if the index of the step is greater than currentChecked 
+  //remove the check and include a times icon.
+    else {
       stepEl.classList.remove("checked");
       stepEl.innerHTML = `
       <i class="fas fa-times"></i>
@@ -46,7 +52,9 @@ function updateStepProgress() {
   });
 
   const checkedNumber = document.querySelectorAll(".checked");
-
+//calculate the width base on the ratio of the 
+//completed steps(checkedNumber) to total steps(stepEl)
+// multiple by 100 to convert the value to %
   progressEl.style.width =
     ((checkedNumber.length - 1) / (stepsEl.length - 1)) * 100 + "%";
 
